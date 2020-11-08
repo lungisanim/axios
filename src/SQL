@@ -1,0 +1,51 @@
+drop database axiosdb;
+create database axiosdb;
+
+use axiosdb
+go
+
+if exists (select * from sys.objects where object_id = OBJECT_ID(N'[dbo].[vehicles]') and type in (N'U'))
+drop table [dbo].[vehicles]
+go
+
+create table vehicles
+(
+       id varchar(50),
+       acceleration int,
+       braking int,
+       cornering_ability int,
+       top_speed int
+)
+go
+
+create index idx_veh_id on vehicles(id)
+go
+
+if exists (select * from sys.objects where object_id = OBJECT_ID(N'[dbo].[tracks]') and type in (N'U'))
+drop table [dbo].[tracks]
+go
+create table tracks
+(
+        id varchar(50),
+        track_sequence varchar(50)
+)
+go
+
+create index idx_trc_id on tracks (id)
+go
+
+INSERT INTO tracks (id, track_sequence) VALUES ('Zwartskop', '11110011100011001110011')
+go
+INSERT INTO tracks (id, track_sequence) VALUES ('Kyalami', '11110011100011001110011101')
+go
+INSERT INTO tracks (id, track_sequence) VALUES ('Nutbush', '11111111001111110111100001')
+go
+
+INSERT INTO vehicles (id, acceleration, braking, cornering_ability, top_speed) VALUES ('Corvette', 8, 3, 4, 9)
+go
+INSERT INTO vehicles (id, acceleration, braking, cornering_ability, top_speed) VALUES ('GTR', 6, 7, 9, 8)
+go
+INSERT INTO vehicles (id, acceleration, braking, cornering_ability, top_speed) VALUES ('Ferrari', 11, 8, 5, 13)
+go
+
+
