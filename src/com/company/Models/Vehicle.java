@@ -1,4 +1,6 @@
-package com.company;
+package com.company.Models;
+
+import com.company.Utilities.Utilities;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

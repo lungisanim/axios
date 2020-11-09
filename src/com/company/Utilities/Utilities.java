@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Utilities;
 
 public class Utilities {
     public static void sanitizeInput(int input){
