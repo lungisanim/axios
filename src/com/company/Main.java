@@ -14,7 +14,7 @@ public class Main {
         Vehicle vehicle = new Vehicle();
 
         try (Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
-                String trSQL = "SELECT id, track_sequence, track_identifier FROM tracks WHERE track_identifier in (1, 2)";
+                String trSQL = "SELECT id, track_sequence, track_identifier FROM tracks";
                 ResultSet trRs = stmt.executeQuery(trSQL);
                 tracks = track.addTracks(trRs);
                 trRs.close();

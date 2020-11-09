@@ -102,8 +102,7 @@ public class Vehicle {
         }
 
         Scanner input = new Scanner(System.in);
-        String choicestr = input.next();
-        int choice = Utilities.getInteger(choicestr);
+        int choice = input.nextInt();
         input.close();
 
         Utilities.sanitizeInput(choice);
