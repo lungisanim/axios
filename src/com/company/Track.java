@@ -9,6 +9,7 @@ public class Track {
 
     private String Id;
     private String TrackSequence;
+    private int TrackIdentifier;
     public List<Track> TrackList;
 
     public String getId() {
@@ -40,5 +41,13 @@ public class Track {
         }
 
         return tracks;
+    }
+
+    public int getTrackIdentifier() {
+        return TrackIdentifier;
+    }
+
+    public void setTrackIdentifier(int trackIdentifier) {
+        TrackIdentifier = trackIdentifier;
     }
 }

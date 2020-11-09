@@ -27,18 +27,19 @@ go
 create table tracks
 (
         id varchar(50),
-        track_sequence varchar(50)
+        track_sequence varchar(50),
+        track_identifier int
 )
 go
 
 create index idx_trc_id on tracks (id)
 go
 
-INSERT INTO tracks (id, track_sequence) VALUES ('Zwartskop', '11110011100011001110011')
+INSERT INTO tracks (id, track_sequence, track_identifier) VALUES ('Zwartskop', '11110011100011001110011', 1)
 go
-INSERT INTO tracks (id, track_sequence) VALUES ('Kyalami', '11110011100011001110011101')
+INSERT INTO tracks (id, track_sequence, track_identifier) VALUES ('Kyalami', '11110011100011001110011101', 2)
 go
-INSERT INTO tracks (id, track_sequence) VALUES ('Nutbush', '11111111001111110111100001')
+INSERT INTO tracks (id, track_sequence, track_identifier) VALUES ('Nutbush', '11111111001111110111100001', 3)
 go
 
 INSERT INTO vehicles (id, acceleration, braking, cornering_ability, top_speed) VALUES ('Corvette', 8, 3, 4, 9)

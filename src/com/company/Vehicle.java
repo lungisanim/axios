@@ -2,10 +2,7 @@ package com.company;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Vehicle {
 
@@ -24,11 +21,7 @@ public class Vehicle {
             if (intSeq > 1 || intSeq <= -1)
                 return 0;
 
-            if (intSeq == 0)
-                Score += vehicle.Braking + vehicle.CorneringAbility;
-
-            if (intSeq == 1)
-                Score += vehicle.Acceleration + vehicle.TopSpeed;
+            Score =+ (intSeq == 1 ? (vehicle.Acceleration + vehicle.TopSpeed) : (vehicle.Braking + vehicle.CorneringAbility));
         }
 
         return Score;
@@ -102,7 +95,7 @@ public class Vehicle {
     }
 
     private void availableVehicles(List<Vehicle> vehicles, Track track) {
-        //vehicles.sort(Comparator.naturalOrder());
+        //Collections.sort(vehicles);
         for (Vehicle vehicle: vehicles) {
             System.out.printf("%s => acceleration: %s, top speed: %s, braking: %s, cornering ability: %s\n",
                     vehicle.Id, vehicle.Acceleration, vehicle.TopSpeed, vehicle.Braking, vehicle.CorneringAbility);
