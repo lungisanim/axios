@@ -1,3 +1,6 @@
+if you are running windows, download the git client
+clone project into your desktop
+
 MSSQL SQL code path *axios/src/SQL*
 
 SQL in the folder above must be run against a MSSQL server database.
