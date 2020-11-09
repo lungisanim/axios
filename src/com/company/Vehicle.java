@@ -96,7 +96,7 @@ public class Vehicle {
 
     private Track chooseTrack(List<Track> tracks) {
 
-        System.out.println("Please choose a track to race in: ");
+        System.out.println("Please choose a track to race by number: ");
         for (Track track : tracks) {
             System.out.printf("%s : %s ", track.getTrackIdentifier(), track.getId());
         }
