@@ -1,7 +1,6 @@
 package com.company;
 
 import java.sql.*;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
@@ -18,10 +17,12 @@ public class Main {
                 String trSQL = "SELECT DISTINCT id, track_sequence FROM tracks";
                 ResultSet trRs = stmt.executeQuery(trSQL);
                 tracks = track.addTracks(trRs);
+                trRs.close();
 
                 String vehSQL = "SELECT DISTINCT id, acceleration, top_speed, braking, cornering_ability FROM vehicles";
                 ResultSet vehRs = stmt.executeQuery(vehSQL);
                 vehicles = vehicle.addVehicles(vehRs);
+                vehRs.close();
 
             System.out.println(vehicles);
 

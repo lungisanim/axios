@@ -90,8 +90,23 @@ public class Vehicle {
     }
 
     public void vehicleScores(List<Track> tracks, List<Vehicle> vehicles) {
-        Track track = tracks.get(1);
+        Track track = chooseTrack(tracks);
         availableVehicles(vehicles, track);
+    }
+
+    private Track chooseTrack(List<Track> tracks) {
+
+        Scanner input = new Scanner(System.in);
+        int choice = input.nextInt();
+        input.close();
+
+        System.out.println("Please choose a track to race in: ");
+        for (Track track : tracks) {
+            System.out.printf("%s : %s ", track.getTrackIdentifier(), track.getId());
+        }
+
+        return tracks.stream().filter( track -> track.getTrackIdentifier() == choice).
+                findFirst().orElse(new Track());
     }
 
     private void availableVehicles(List<Vehicle> vehicles, Track track) {
