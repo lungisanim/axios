@@ -1,5 +1,5 @@
 if you are running windows, download the git client
-clone project into your desktop
+clone project into your desktop : *git clone https://github.com/lungisanim/axios.git*
 
 MSSQL SQL code path *axios/src/SQL*
 
