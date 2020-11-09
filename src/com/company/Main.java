@@ -14,7 +14,7 @@ public class Main {
         Vehicle vehicle = new Vehicle();
 
         try (Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
-                String trSQL = "SELECT DISTINCT id, track_sequence FROM tracks";
+                String trSQL = "SELECT DISTINCT id, track_sequence, track_identifier FROM tracks";
                 ResultSet trRs = stmt.executeQuery(trSQL);
                 tracks = track.addTracks(trRs);
                 trRs.close();
@@ -23,8 +23,6 @@ public class Main {
                 ResultSet vehRs = stmt.executeQuery(vehSQL);
                 vehicles = vehicle.addVehicles(vehRs);
                 vehRs.close();
-
-            System.out.println(vehicles);
 
                 vehicle.vehicleScores(tracks, vehicles);
 

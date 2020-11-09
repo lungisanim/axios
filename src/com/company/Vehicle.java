@@ -96,14 +96,16 @@ public class Vehicle {
 
     private Track chooseTrack(List<Track> tracks) {
 
-        Scanner input = new Scanner(System.in);
-        int choice = input.nextInt();
-        input.close();
-
         System.out.println("Please choose a track to race in: ");
         for (Track track : tracks) {
             System.out.printf("%s : %s ", track.getTrackIdentifier(), track.getId());
         }
+
+        Scanner input = new Scanner(System.in);
+        int choice = input.nextInt();
+        input.close();
+
+        Utilities.sanitizeInput(choice);
 
         return tracks.stream().filter( track -> track.getTrackIdentifier() == choice).
                 findFirst().orElse(new Track());

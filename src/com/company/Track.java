@@ -28,6 +28,14 @@ public class Track {
         TrackSequence = trackSequence;
     }
 
+    public int getTrackIdentifier() {
+        return TrackIdentifier;
+    }
+
+    public void setTrackIdentifier(int trackIdentifier) {
+        TrackIdentifier = trackIdentifier;
+    }
+
     public List<Track> addTracks(ResultSet rs) throws SQLException {
         Track track = new Track();
         List<Track> tracks = new ArrayList<>();
@@ -36,18 +44,11 @@ public class Track {
         {
             track.setId(rs.getString("id"));
             track.setTrackSequence(rs.getString("track_sequence"));
+            track.setTrackIdentifier(rs.getInt("track_identifier"));
 
             tracks.add(track);
         }
 
         return tracks;
-    }
-
-    public int getTrackIdentifier() {
-        return TrackIdentifier;
-    }
-
-    public void setTrackIdentifier(int trackIdentifier) {
-        TrackIdentifier = trackIdentifier;
     }
 }
