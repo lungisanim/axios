@@ -2,6 +2,7 @@
   <dictionary name="lmnhl">
     <words>
       <w>axios</w>
+      <w>choicestr</w>
       <w>jdbc</w>
     </words>
   </dictionary>
