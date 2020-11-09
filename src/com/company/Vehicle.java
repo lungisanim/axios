@@ -19,7 +19,7 @@ public class Vehicle {
         for (char seq: trackSeq) {
             int intSeq = Integer.valueOf(seq);
             if (intSeq > 1 || intSeq <= -1)
-                return 0;
+                return Score;
 
             Score =+ (intSeq == 1 ? (vehicle.Acceleration + vehicle.TopSpeed) : (vehicle.Braking + vehicle.CorneringAbility));
         }
