@@ -5,6 +5,7 @@ import com.company.Utilities.Utilities;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Vehicle {
 
@@ -114,7 +115,7 @@ public class Vehicle {
     }
 
     private void availableVehicles(List<Vehicle> vehicles, Track track) {
-        //Collections.sort(vehicles);
+        vehicles.stream().sorted(Comparator.comparing(Vehicle::getTopSpeed)).collect(Collectors.toList());
         for (Vehicle vehicle: vehicles) {
             System.out.printf("%s => acceleration: %s, top speed: %s, braking: %s, cornering ability: %s\n",
                     vehicle.Id, vehicle.Acceleration, vehicle.TopSpeed, vehicle.Braking, vehicle.CorneringAbility);
